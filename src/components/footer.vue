@@ -1,7 +1,11 @@
 <template>
   <div class="panel-right">
     <div class="header-right"></div>
-    <content_right v-bind:list="list"></content_right>
+    <content_right v-bind:list="list">
+      <div>
+        <p>{{tit}}</p>
+      </div>
+    </content_right>
     <div class="foot-right"></div>
   </div>
 </template>
@@ -12,7 +16,8 @@ export default {
   name: "panelright",
   data() {
     return {
-      text: "day la panel right"
+      text: "day la panel right",
+      tit: "đây là danh sách nhân viên"
     };
   },
   props: {

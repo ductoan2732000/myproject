@@ -1,12 +1,21 @@
 <template>
   <div class="content-right">
+    <slot></slot>
     <ul>
-      <us
-        v-for="user in list"
-        v-bind:key="user.index"
-        v-bind:user="user"
-      ></us>
+      <us v-for=  "user in list" v-bind:key="user.index" v-bind:user="user"></us>
     </ul>
+    <div>
+      <button class="avatar" v-on:click="clickButtonAvatat">
+        Thay đổi avatar
+      </button>
+      <input
+        type="file"
+        name=""
+        id=""
+        ref="buttonClick"
+        style="display: none"
+      />
+    </div>
   </div>
 </template>
 
@@ -26,6 +35,11 @@ export default {
   },
   components: {
     us
+  },
+  methods: {
+    clickButtonAvatat: function() {
+      console.log(this.$refs.buttonClick.click());
+    }
   }
 };
 </script>
@@ -35,5 +49,11 @@ export default {
   width: 100%;
   height: 500px;
   background-color: cadetblue;
+}
+.avatar {
+  widows: 50px;
+  height: 25px;
+  background-color: cyan;
+  border: 1px solid;
 }
 </style>

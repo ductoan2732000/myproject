@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <panel_left />
-    <panel_right v-bind:list="list"></panel_right>
+    <panel_right v-bind:list="list">
+      
+    </panel_right>
   </div>
 </template>
 
