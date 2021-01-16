@@ -1,17 +1,22 @@
 <template>
   <div class="panel-right">
-    <div class="header-right"></div>
-    <content_right v-bind:list="list">
+    <div class="header-right">
+      <slot></slot>
+    </div>
+    <content_right v-bind:list="list" v-on:ChangeToan="ChangeToan">
       <div>
-        <p>{{tit}}</p>
+        <slot></slot>
+        <p>{{ tit }}</p>
       </div>
     </content_right>
-    <div class="foot-right"></div>
+    <div class="foot-right">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
 <script>
-import content_right from './content-right';
+import content_right from "./content-right";
 export default {
   name: "panelright",
   data() {
@@ -21,13 +26,18 @@ export default {
     };
   },
   props: {
-      list: {
-          type: Array,
-          default: []
-      }
+    list: {
+      type: Array,
+      default: []
+    }
   },
   components: {
-      content_right,
+    content_right
+  },
+  methods: {
+    ChangeToan: function(){
+      this.$emit('ChangeToan');
+    }
   }
 };
 </script>
@@ -41,13 +51,18 @@ export default {
   top: 0px;
 }
 .header-right {
+  display: flex;
   width: 100%;
   height: 50px;
   background-color: brown;
 }
 .foot-right {
+  display: flex;
   width: 100%;
   height: calc(100% - 550px);
   background-color: coral;
+}
+.ppp {
+  padding-left: 10px;
 }
 </style>

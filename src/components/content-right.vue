@@ -2,11 +2,14 @@
   <div class="content-right">
     <slot></slot>
     <ul>
-      <us v-for=  "user in list" v-bind:key="user.index" v-bind:user="user"></us>
+      <us v-for="user in list" v-bind:key="user.index" v-bind:user="user"></us>
     </ul>
     <div>
       <button class="avatar" v-on:click="clickButtonAvatat">
         Thay đổi avatar
+      </button>
+      <button class="change-from-chill" v-on:click="ChangeToDad">
+        Thay ddooir toan
       </button>
       <input
         type="file"
@@ -39,6 +42,9 @@ export default {
   methods: {
     clickButtonAvatat: function() {
       console.log(this.$refs.buttonClick.click());
+    },
+    ChangeToDad: function() {
+      this.$emit('ChangeToan');
     }
   }
 };
@@ -46,6 +52,7 @@ export default {
 
 <style>
 .content-right {
+  display: inline-block;
   width: 100%;
   height: 500px;
   background-color: cadetblue;

@@ -1,6 +1,8 @@
 <template>
   <div class="panel-left">
-    <div class="title-left">{{ title }}</div>
+    <div class="title-left">
+      <slot></slot>
+    </div>
     <content_left />
   </div>
 </template>
@@ -27,11 +29,13 @@ export default {
   top: 0px;
   width: 300px;
   height: 100vh;
-  background-color: black;
+  background-color: black;;
 }
 .title-left {
   width: 100%;
   height: 30px;
   background-color: aquamarine;
+  display: flex;
+  
 }
 </style>
