@@ -35,8 +35,8 @@ export default {
     content_right
   },
   methods: {
-    ChangeToan: function(){
-      this.$emit('ChangeToan');
+    ChangeToan: function() {
+      this.$emit("ChangeToan");
     }
   }
 };

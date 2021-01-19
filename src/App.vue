@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <panel_left>
-      <p class="ppp">{{ toan }}</p>
     </panel_left>
     <panel_right v-bind:list="list" v-on:ChangeToan="ChangeToan">
       <p class="ppp">{{ toan }}</p>
